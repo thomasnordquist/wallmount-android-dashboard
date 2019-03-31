@@ -20,7 +20,7 @@ var app = {
     screensaver.enable()
 
     document.getElementById('debugButton').addEventListener('touchend', () => this.toggleDebug(remoteAdb))
-    document.getElementById('debugButton').addEventListener('click', () => this.toggleDebug(remoteAdb))
+    // document.getElementById('debugButton').addEventListener('click', () => this.toggleDebug(remoteAdb))
   },
 
   debugEnabled: false,
