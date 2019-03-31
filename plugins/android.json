@@ -1,0 +1,21 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "de.t7n.dashboard"
+    },
+    "org.apache.cordova.shell-exec": {
+      "PACKAGE_NAME": "de.t7n.dashboard"
+    },
+    "cordova-plugin-networkinterface": {
+      "PACKAGE_NAME": "de.t7n.dashboard"
+    }
+  },
+  "dependent_plugins": {}
+}

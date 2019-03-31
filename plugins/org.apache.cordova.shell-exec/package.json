@@ -1,0 +1,62 @@
+{
+  "_from": "git+https://github.com/petervojtek/cordova-plugin-shell-exec.git",
+  "_id": "cordova-plugin-shell-exec@1.0.0",
+  "_inBundle": false,
+  "_integrity": "",
+  "_location": "/cordova-plugin-shell-exec",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "git",
+    "raw": "https://github.com/petervojtek/cordova-plugin-shell-exec.git",
+    "rawSpec": "https://github.com/petervojtek/cordova-plugin-shell-exec.git",
+    "saveSpec": "git+https://github.com/petervojtek/cordova-plugin-shell-exec.git",
+    "fetchSpec": "https://github.com/petervojtek/cordova-plugin-shell-exec.git",
+    "gitCommittish": null
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "git+https://github.com/petervojtek/cordova-plugin-shell-exec.git#a65823d11ac8f9d577ef417040f61af12339d924",
+  "_spec": "https://github.com/petervojtek/cordova-plugin-shell-exec.git",
+  "_where": "/Users/thomas/projects/home-automation-display",
+  "author": {
+    "name": "Peter Vojtek"
+  },
+  "bugs": {
+    "url": "https://github.com/petervojtek/cordova-plugin-shell-exec/issues"
+  },
+  "bundleDependencies": false,
+  "cordova": {
+    "id": "cordova-plugin-shell-exec",
+    "platforms": [
+      "android"
+    ]
+  },
+  "deprecated": false,
+  "description": "Apache Cordova Execute Shell Command Plugin",
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=5.0.0"
+    }
+  ],
+  "homepage": "https://github.com/petervojtek/cordova-plugin-shell-exec",
+  "keywords": [
+    "exec",
+    "runtime",
+    "process",
+    "shell",
+    "console",
+    "command",
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "license": "Apache 2.0",
+  "name": "cordova-plugin-shell-exec",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/petervojtek/cordova-plugin-shell-exec.git"
+  },
+  "version": "1.0.0"
+}

@@ -1,0 +1,34 @@
+{
+  "cordova-plugin-whitelist": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-whitelist@^1.3.3"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "org.apache.cordova.shell-exec": {
+    "source": {
+      "type": "registry",
+      "id": "https://github.com/petervojtek/cordova-plugin-shell-exec.git"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "es6-promise-plugin": {
+    "source": {
+      "type": "registry",
+      "id": "es6-promise-plugin"
+    },
+    "is_top_level": false,
+    "variables": {}
+  },
+  "cordova-plugin-networkinterface": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-networkinterface"
+    },
+    "is_top_level": true,
+    "variables": {}
+  }
+}
