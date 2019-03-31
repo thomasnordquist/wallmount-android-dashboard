@@ -7,7 +7,6 @@ class Average {
   }
 
   push(value) {
-    console.log(value)
     this.pointer = (this.pointer + 1) % this.maxSize
     this.data[this.pointer] = value
     this.size = Math.min(this.size + 1, this.maxSize)

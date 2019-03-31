@@ -42,7 +42,7 @@ class MovementDetection extends EventEmitter {
         setInterval(() => requestAnimationFrame(pictureCallback), this.frameInterval)
       })
       .catch((err) => {
-          console.log("An error occurred: " + err);
+        console.log("An error occurred: " + err);
       });
   }
 
@@ -89,16 +89,11 @@ class MovementDetection extends EventEmitter {
   }
 
   outputDebugInfo(organicMovementDetected) {
-    const threshold = this.imageComparator.averageThreshold.avg()
+    const threshold = this.imageComparator.averageThreshold()
     const html = this.imageComparator.currentDeltaMatrix
-      .map(p => {
-        let r, g, b
-        r = g = b = Math.min(p*20, 255)
-        return `<div style="display: inline-block; width: 20px; height: 20px;box-sizing: border-box; border: 1px solid black; background-color:rgb(${r}, ${g}, ${b})">${Math.round(p)}</div>`
-      }).join('')
+      .map(p => `<div style="display: inline-block; width: 20px; height: 20px;background-color:${p > threshold ? '#999' : 'inherit'}">${this.movementCounter}</div>`).join('')
     document.getElementById('deltaMap').innerHTML = html
-    // document.getElementById('deltaMap').style.backgroundColor = organicMovementDetected ? 'green' : 'inherit'
-    document.getElementById('deltaMap').style.borderColor = organicMovementDetected ? 'green' : 'black'
+    document.getElementById('deltaMap').style.backgroundColor = organicMovementDetected ? 'green' : 'inherit'
   }
 }
 
@@ -106,7 +101,8 @@ class ImageCompare {
   constructor() {
     this.previous = null
     this.current = null
-    this.averageThreshold = new Average(10)
+    this.threshold = 8
+    this.averageThresholdCollection = new Average(10)
     this.currentDeltaMatrix = []
   }
 
@@ -115,7 +111,11 @@ class ImageCompare {
     this.current = img
     this.currentDeltaMatrix = this.calcDeltaValues()
     const threshold = this.currentThreshold()
-    this.averageThreshold.push(threshold)
+    this.averageThresholdCollection.push(threshold)
+  }
+
+  averageThreshold() {
+    return this.averageThresholdCollection.avg() * 1.5
   }
 
   calcDeltaValues() {
@@ -133,13 +133,13 @@ class ImageCompare {
   }
 
   segmentsOverTheThresholdMap() {
-    const avgThreshold = this.averageThreshold.avg() * 1.5
+    const avgThreshold = this.averageThreshold()
   
     return this.currentDeltaMatrix.map(p => p > avgThreshold ? 1 : 0)
   }
 
   segmentsOverTheThresholdCount() {
-    const avgThreshold =  this.averageThreshold.avg() * 1.5
+    const avgThreshold = this.averageThreshold()
 
     return this.currentDeltaMatrix.map(p => p > avgThreshold ? 1 : 0).filter(p => p != 0).length
   }
