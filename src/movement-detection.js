@@ -144,10 +144,9 @@ class ImageCompare {
     return this.currentDeltaMatrix.map(p => p > avgThreshold ? 1 : 0).filter(p => p != 0).length
   }
 
-
   currentThreshold() {
     const maxChangedSegments = 4
-    const sorted = this.currentDeltaMatrix.sort().reverse()
+    const sorted = this.currentDeltaMatrix.slice().sort().reverse()
 
     // Current threshold is the next item above the lowest allowed segments
     return sorted[maxChangedSegments]
